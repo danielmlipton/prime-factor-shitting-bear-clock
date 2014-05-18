@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+  <link rel="stylesheet" media="all" href="resources/bear.css" />
+</head>
+<body onLoad="init();">
+  <div id="sprite">
+  </div>
+  <div id="shit">
+  </div>
+</body>
+<script type="text/javascript" src="lib/poop.js"></script>
+<script type="text/javascript" src="lib/clock.js"></script>
+<script type="text/javascript" src="lib/prime-factor.js"></script>
+<script type="text/javascript">
+
+  window.onload = function () {
+    var c = new Clock();
+    var p = new PrimeFactor();
+    setInterval((function() {
+      return new Poop( p.factor( c.updateClock() ) );
+    }), 1000);  
+  }
+
+</script>
+</html>
