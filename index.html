@@ -1,26 +1,29 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" media="all" href="resources/bear.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Prime Factor Shitting Bear Clock</title>
+  <meta name="description" content="The Prime Number Shitting Bear is a classic. What if it didn't just shit prime numbers though? What if it shit the time, represented as a prime factor? That's just what this bear does." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="resources/bear.css" />
 </head>
 <body>
-  <div id="sprite">
-  </div>
-  <div id="shit">
-  </div>
+  <div id="sprite"></div>
+  <div id="shit"></div>
+  <script type="text/javascript" src="lib/poop.js"></script>
+  <script type="text/javascript" src="lib/clock.js"></script>
+  <script type="text/javascript" src="lib/prime-factor.js"></script>
+  <script type="text/javascript">
+
+    window.onload = function () {
+      var c = new Clock();
+      var p = new PrimeFactor();
+      setInterval((function() {
+        return new Poop( p.factor( c.updateClock() ) );
+      }), 1000);  
+    }
+
+  </script>
 </body>
-<script type="text/javascript" src="lib/poop.js"></script>
-<script type="text/javascript" src="lib/clock.js"></script>
-<script type="text/javascript" src="lib/prime-factor.js"></script>
-<script type="text/javascript">
-
-  window.onload = function () {
-    var c = new Clock();
-    var p = new PrimeFactor();
-    setInterval((function() {
-      return new Poop( p.factor( c.updateClock() ) );
-    }), 1000);  
-  }
-
-</script>
 </html>
